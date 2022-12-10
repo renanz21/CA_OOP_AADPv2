@@ -4,6 +4,8 @@
  */
 package eirvidprototype;
 
+import ConnectMySQL.*;
+
 /**
  *
  * @author Z
@@ -14,7 +16,10 @@ public class Eirvidprototype {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("something");
+        
+            //ReturnClass.listInformation(); 
+            //InsertClass.insertInformation(); 
+            //DeleteClass.removeInformation();
     }
     
 }
