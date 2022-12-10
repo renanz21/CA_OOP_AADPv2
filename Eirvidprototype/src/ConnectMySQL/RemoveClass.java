@@ -10,8 +10,8 @@ package ConnectMySQL;
  */
 public class RemoveClass {
     
-    static void removeInformation(){
-            String newQuery = "DELETE FROM `test`.`mytable` WHERE (`name` = 'Example name'))";
+    public static void removeInformation(){
+            String newQuery = "DELETE FROM `test`.`mytable` WHERE (`id` = '1'))";
             SQLConnection.connectSQL(newQuery);
     }    
 }

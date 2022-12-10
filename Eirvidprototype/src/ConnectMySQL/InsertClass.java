@@ -10,8 +10,8 @@ package ConnectMySQL;
  */
 public class InsertClass {
     
-    static void insertInformation(){
-            String newQuery = "INSERT INTO `myTable` (`name`)\n" + "VALUES\n" + "  (\"Example name\")";
+    public static void insertInformation(String name, String email){
+            String newQuery = "INSERT INTO `test`.`mytable` (`name`, `email`) VALUES ('" + name + "', '" + email + "');";
             SQLConnection.connectSQL(newQuery);
     }
     

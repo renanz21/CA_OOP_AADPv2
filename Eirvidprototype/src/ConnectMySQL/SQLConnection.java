@@ -79,13 +79,23 @@ public class SQLConnection {
                             conn.close() ;
                         }
                         catch( Exception e ){
-			System.out.println( e ) ;
+                            
+                            /*
+                            * SQL Excpetion code in case needed for troubleshooting
+                            */ 
+                        
+                        //System.out.println( e ) ;
                         }
                 
 		}
 		
 		catch( Exception e ){
-			System.out.println( e ) ;
+                    
+                            /*
+                            * SQL Excpetion code in case needed for troubleshooting
+                            */ 
+                        
+                        //System.out.println( e ) ;
 		}
     }
 }

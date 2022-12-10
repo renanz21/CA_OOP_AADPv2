@@ -17,8 +17,11 @@ public class Eirvidprototype {
      */
     public static void main(String[] args) {
         
-            //ReturnClass.listInformation(); 
-            //InsertClass.insertInformation(); 
+        String name = "Ca ce";
+        String email = "cc@email.com";
+        
+            ReturnClass.listInformation(); 
+            //InsertClass.insertInformation(name, email); 
             //DeleteClass.removeInformation();
     }
     
