@@ -12,7 +12,8 @@ import java.sql.Statement;
 
 /**
  *
- * @author Z
+ * @author Renan Gomes
+ * @SN 2020295
  */
 public class SQLConnection {
     
@@ -42,9 +43,8 @@ public class SQLConnection {
 			// Loop through the result set
                         
 			while(rs.next()) {
-				System.out.println( rs.getString("name"));
-                                      //  + "\t" + rs.getString("email") ;
-			}
+				System.out.println( rs.getString("id") + "\t" + rs.getString("name") + "\t" + rs.getString("email"));
+                        }
 
 			// Close the result set
 			rs.close() ;                      

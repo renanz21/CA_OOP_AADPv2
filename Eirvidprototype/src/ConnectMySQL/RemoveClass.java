@@ -6,7 +6,8 @@ package ConnectMySQL;
 
 /**
  *
- * @author Z
+ * @author Renan Gomes
+ * @SN 2020295
  */
 public class RemoveClass {
     

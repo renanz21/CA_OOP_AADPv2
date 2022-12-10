@@ -6,13 +6,19 @@ package ConnectMySQL;
 
 /**
  *
- * @author Z
+ * @author Renan Gomes
+ * @SN 2020295
  */
 public class InsertClass {
     
     public static void insertInformation(String name, String email){
             String newQuery = "INSERT INTO `test`.`mytable` (`name`, `email`) VALUES ('" + name + "', '" + email + "');";
             SQLConnection.connectSQL(newQuery);
+    }
+    
+    public static void updateEmail(int id, String value){
+            String newQuery = "UPDATE `test`.`mytable` SET `email` = '" + value + "' WHERE (`id` = '" + id + "');";
+            SQLConnection.connectSQL(newQuery);        
     }
     
 }

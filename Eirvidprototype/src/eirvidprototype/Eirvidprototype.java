@@ -17,12 +17,15 @@ public class Eirvidprototype {
      */
     public static void main(String[] args) {
         
-        String name = "Ca ce";
+        String name = "Aaron Goodman";
         String email = "cc@email.com";
-        
-            ReturnClass.listInformation(); 
+        int id = 2;
+        String value = "gg2@email.com";
+            
+            //ReturnClass.searchByName(name);
             //InsertClass.insertInformation(name, email); 
             //DeleteClass.removeInformation();
+            InsertClass.updateEmail(id, value);
     }
     
 }
