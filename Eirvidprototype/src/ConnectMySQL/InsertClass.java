@@ -21,5 +21,7 @@ public class InsertClass {
             SQLConnection.connectSQL(newQuery);        
     }
     
+   
+    
 }
 

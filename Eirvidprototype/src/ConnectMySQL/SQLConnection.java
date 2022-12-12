@@ -23,9 +23,9 @@ public class SQLConnection {
 			// Load the database driver
                         Class.forName("com.mysql.cj.jdbc.Driver");
 			
-			String dbServer = "jdbc:mysql://localhost/test";
+			String dbServer = "jdbc:mysql://localhost/mycadb";
 			String user = "root";
-			String password = "root";
+			String password = "mbakoppearle2004";
 
 			// Get a connection to the database
 			Connection conn = DriverManager.getConnection(dbServer, user, password) ;
@@ -43,7 +43,7 @@ public class SQLConnection {
 			// Loop through the result set
                         
 			while(rs.next()) {
-				System.out.println( rs.getString("id") + "\t" + rs.getString("name") + "\t" + rs.getString("email"));
+				System.out.println( rs.getString("idAdmin") + "\t" + rs.getString("firstName") + "\t" + rs.getString("lastName"));
                         }
 
 			// Close the result set

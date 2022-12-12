@@ -16,16 +16,16 @@ public class Eirvidprototype {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+      /*  
         String name = "Aaron Goodman";
         String email = "cc@email.com";
         int id = 2;
-        String value = "gg2@email.com";
-            
+        String value = "gg2@email.com";*/
+            ReturnClass.listInformation();
             //ReturnClass.searchByName(name);
             //InsertClass.insertInformation(name, email); 
             //DeleteClass.removeInformation();
-            InsertClass.updateEmail(id, value);
+           // InsertClass.updateEmail(id, value);
     }
     
 }

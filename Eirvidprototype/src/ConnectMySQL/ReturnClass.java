@@ -12,7 +12,7 @@ package ConnectMySQL;
 public class ReturnClass {
     
     public static void listInformation(){
-            String newQuery = "SELECT * FROM mytable;";
+            String newQuery = "SELECT * FROM admin;";
             SQLConnection.connectSQL(newQuery);
             
     }
