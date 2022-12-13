@@ -10,10 +10,10 @@ import ConnectMySQL.ReturnClass;
 
 /**
  *
- * @author tchat
+ * @author Lucresse Pearle Tchatchoua Mbakop- 2021404
  */
 public class registrationData {
-     public void menu() throws Exception {
+     static  void menu( )  {
          try{
          System.out.println("Welcome to RTE Rental System");
          System.out.println("Please select One option");
@@ -26,14 +26,15 @@ public class registrationData {
           }else if (option == 2){
               register();
           }
-         }catch (Exception e) {
+         }
+         catch (Exception e) {
             System.out.println("please choose one of the option above ");
         }
          
     
     }
    
-     public void logIn() throws Exception {
+     static void logIn()  {
         try {
             Scanner scan = new Scanner(System.in);
             System.out.println("----------------------------------------");
@@ -51,7 +52,7 @@ public class registrationData {
         }
     }
      
-      public void register() throws Exception {
+      static void register() {
         try {
             Scanner scan = new Scanner(System.in);
             System.out.println("----------------------------------------");

@@ -7,12 +7,12 @@ import java.util.Scanner;
 
 /**
  *
- * @author tchat
+ * @author Lucresse Pearle Tchatchoua Mbakop- 2021404
  */
 public class saveData {
      // save the data of the user into the database 
      public static void saveData(String original_title, int id ,double price){
-            String save ="INSERT INTO 'movie'.'mycadb' ('original_title', 'id', 'price') VALUES ('" + original_title + "', '" + id + "','" + price + "');";
+            String save ="INSERT INTO `mycadb`.`movies` ('original_title', 'id', 'price') VALUES ('" + original_title + "', '" + id + "','" + price + "');";
             SQLConnection.connectSQL(save);
             System.out.println("movie name have been save in our database");        
      }
@@ -24,7 +24,7 @@ public class saveData {
                 if(YN == 1){
              System.out.println("Please select the id of the movie");
              int id = scan.nextInt();
-             String deleteData = "DELETE FROM `movie`.`mycadb` WHERE (`id` = '"+id+"'))";
+             String deleteData = "DELETE FROM `mycadb`.`movie` WHERE (`id` = '"+id+"'))";
              SQLConnection.connectSQL(deleteData);
                 }
                 else if(YN == 2){

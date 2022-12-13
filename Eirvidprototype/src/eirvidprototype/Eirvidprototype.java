@@ -21,11 +21,12 @@ public class Eirvidprototype {
         String email = "cc@email.com";
         int id = 2;
         String value = "gg2@email.com";*/
-            ReturnClass.listInformation();
+            //ReturnClass.listInformation();
             //ReturnClass.searchByName(name);
             //InsertClass.insertInformation(name, email); 
             //DeleteClass.removeInformation();
            // InsertClass.updateEmail(id, value);
+          
     }
     
 }

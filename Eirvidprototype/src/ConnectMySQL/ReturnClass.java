@@ -24,7 +24,7 @@ public class ReturnClass {
     }
     
     public static void searchByEmail(String email){
-            String newQuery = "SELECT * FROM mytable WHERE (`email` = '" + email + "');";
+            String newQuery = "SELECT * FROM mycadb WHERE (`email` = '" + email + "');";
             SQLConnection.connectSQL(newQuery);
             
     }
