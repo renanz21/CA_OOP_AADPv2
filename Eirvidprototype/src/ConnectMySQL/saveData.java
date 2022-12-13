@@ -4,14 +4,13 @@
  */
 package ConnectMySQL;
 import java.util.Scanner;
-import java.sql.Timestamp;
 
 /**
  *
  * @author tchat
  */
 public class saveData {
-     
+     // save the data of the user into the database 
      public static void saveData(String original_title, int id ,double price){
             String save ="INSERT INTO 'movie'.'mycadb' ('original_title', 'id', 'price') VALUES ('" + original_title + "', '" + id + "','" + price + "');";
             SQLConnection.connectSQL(save);

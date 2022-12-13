@@ -11,8 +11,8 @@ package ConnectMySQL;
  */
 public class InsertClass {
     
-    public static void insertInformation(String name, String email){
-            String newQuery = "INSERT INTO `test`.`mytable` (`name`, `email`) VALUES ('" + name + "', '" + email + "');";
+    public static void insertInformation(String name, String email, String password){
+            String newQuery = "INSERT INTO `test`.`mytable` (`name`, `email`, `password`) VALUES ('" + name + "', '" + email + ", '" + password + "');";
             SQLConnection.connectSQL(newQuery);
     }
     
