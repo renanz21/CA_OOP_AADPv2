@@ -49,6 +49,9 @@ class MoviesRecord {
         this.voteAverage = voteAverage;
         this.voteCount = voteCount;
         this.price = price;
+        
+        //for testing only
+        //System.out.println(this.price + " " + this.title);
     }
     
     

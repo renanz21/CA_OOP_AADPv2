@@ -5,7 +5,6 @@
 package eirvidprototype;
 
 import ConnectMySQL.*;
-import eirvidprototype.IssueReceipt;
 import java.io.IOException;
 import java.util.List;
 
@@ -48,6 +47,12 @@ public class Eirvidprototype {
             //DeleteClass.removeInformation();
            // InsertClass.updateEmail(id, value);
            
+           
+// before getting any variable from the cvs classes, use this two lines, you need to call the class and start it            
+//           CSVFileProcessor csv = new CSVFileProcessor();
+//           csv.CSVFileProcessor();
+           
+           
 
 
             }
@@ -56,4 +61,4 @@ public class Eirvidprototype {
 
    
     
-}
+
