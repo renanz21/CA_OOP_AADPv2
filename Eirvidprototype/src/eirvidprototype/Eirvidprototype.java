@@ -17,14 +17,14 @@ public class Eirvidprototype {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-      /*  
-        String name = "Aaron Goodman";
-        String email = "cc@email.com";
-        int id = 2;
-        String value = "gg2@email.com";*/
+        
+        String name = "fela";
+        String email = "f@f5";
+        String password = "ff5";
+        
             //ReturnClass.listInformation();
             //ReturnClass.searchByName(name);
-            //InsertClass.insertInformation(name, email); 
+            //InsertClass.insertInformation(name, email, password); 
             //DeleteClass.removeInformation();
            // InsertClass.updateEmail(id, value);
           registrationData.register();
