@@ -11,12 +11,12 @@ package eirvidprototype;
  */
 public class DataValidator {
     /* This class was created based on Algorithms, architecture design patterns classes
-    This class is responsable for checking if all the columns in the cvs file is in the correct format.
+    This class is responsable for checking if all the columns in the cvs file is in the correct format and output a boolean variable.
     */
      public boolean ValidateData(String[] columns) {
 //      check if all the fields are incluided in the file
         if (columns.length != 11) {
-            System.out.println("Warning: Incorrect number of fields");
+            System.out.println("Warning: Incorrect file format");
             return false;
         }
         

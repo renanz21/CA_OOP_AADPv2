@@ -15,25 +15,25 @@ import java.util.List;
  */
 public class DataParser {
     /* This class was created based on Algorithms, architecture design patterns classes
-    This create a BufferedReader, read the lines in the file into a Arraylist and return the lines
+   
     */
     public List<MovieRecord> ParseData(List<String> lines) {
-        List<MovieRecord> trades = new ArrayList<>();
+        List<MovieRecord> movies = new ArrayList<>();
         DataSplit dataSplit = new DataSplit();
-        //DataValidator dataValidator = new DataValidator();
+        DataValidator dataValidator = new DataValidator();
         ColumnsMap columnsMap = new ColumnsMap();
         
         lines.forEach(line -> {
             // Splitting
-            String[] fields = dataSplit.Seperate(line);
+            String[] columns = dataSplit.Seperate(line);
             
             // Validating
-            //if (dataValidator.ValidateData(fields)) {
+            if (dataValidator.ValidateData(columns)) {
                 // Mapping
-            trades.add(dataMapper.Map(fields));
+            movies.add(columnsMap.Map(columns));
             //}
         });   
-        return trades;
+        return movies;
     }
 
 }
