@@ -18,10 +18,10 @@ abstract class Receipt {
         String title = "";
         double price=0;
         
-        Receipt(String name, String movie,double value ){
+        Receipt(String name, String title,double value ){
             
             this.printname= name;
-            this.title = movie;
+            this.title = title;
             this.price = value;          
         }
         public void printReceipt(){

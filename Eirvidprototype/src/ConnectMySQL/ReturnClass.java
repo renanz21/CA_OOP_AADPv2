@@ -12,19 +12,19 @@ package ConnectMySQL;
 public class ReturnClass {
     
     public static void listInformation(){
-            String newQuery = "SELECT * FROM admin;";
+            String newQuery = "SELECT * FROM userinfo;";
             SQLConnection.connectSQL(newQuery);
             
     }
     
     public static void searchByName(String name){
-            String newQuery = "SELECT * FROM mytable WHERE (`name` = '" + name + "');";
+            String newQuery = "SELECT * FROM userinfo WHERE (`name` = '" + name + "');";
             SQLConnection.connectSQL(newQuery);
             
     }
     
     public static void searchByEmail(String email){
-            String newQuery = "SELECT * FROM mycadb WHERE (`email` = '" + email + "');";
+            String newQuery = "SELECT * FROM userinfo WHERE (`email` = '" + email + "');";
             SQLConnection.connectSQL(newQuery);
             
     }

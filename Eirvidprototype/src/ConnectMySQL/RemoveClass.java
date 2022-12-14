@@ -12,7 +12,7 @@ package ConnectMySQL;
 public class RemoveClass {
     
     public static void removeInformation(){
-            String newQuery = "DELETE FROM `test`.`mytable` WHERE (`id` = '1'))";
+            String newQuery = "DELETE FROM `ca_oop_aadp`.`userinfo` WHERE (`id` = '1'))";
             SQLConnection.connectSQL(newQuery);
     }    
 }

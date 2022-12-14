@@ -23,7 +23,7 @@ public class SQLConnection {
 			// Load the database driver
                         Class.forName("com.mysql.cj.jdbc.Driver");
 			
-			String dbServer = "jdbc:mysql://localhost/mycadb";
+			String dbServer = "jdbc:mysql://localhost/ca_oop_aadp";
 			String user = "root";
 			String password = "mbakoppearle2004";
 
@@ -43,7 +43,7 @@ public class SQLConnection {
 			// Loop through the result set
                         
 			while(rs.next()) {
-				System.out.println( rs.getString("idAdmin") + "\t" + rs.getString("firstName") + "\t" + rs.getString("lastName"));
+				System.out.println( rs.getString("id") + "\t" + rs.getString("name") + "\t" + rs.getString("email"));
                         }
 
 			// Close the result set

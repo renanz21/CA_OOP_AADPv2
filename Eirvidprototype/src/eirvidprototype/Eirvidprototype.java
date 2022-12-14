@@ -26,7 +26,7 @@ public class Eirvidprototype {
             //InsertClass.insertInformation(name, email); 
             //DeleteClass.removeInformation();
            // InsertClass.updateEmail(id, value);
-          
+          registrationData.register();
     }
     
 }
