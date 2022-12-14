@@ -4,35 +4,33 @@
  */
 package eirvidprototype;
 
-
-
-
 /**
  *
  * @author ca_ro
  */
-abstract class Receipt {
-   
-               
-        String printname = "";
-        String title = "";
-        double price=0;
+class Receipt implements interfaceReceipt {
+    
+    String name;
+    String title;
+    double price;
+    
+    Receipt(double price, String name, String title){
+       this.price = price;
+       this.name= name;
+       this.title = title;
+    }
+    
+    @Override
+    public void print(){
+        System.out.println("_________________________________________________________");
+        System.out.println("---------------------RECEIPT-----------------------------");
+        System.out.println("_________________________________________________________");
         
-        Receipt(String name, String movie,double value ){
-            
-            this.printname= name;
-            this.title = movie;
-            this.price = value;          
-        }
-        public void printReceipt(){
-             
-            System.out.println(this.printname+this.title+this.price);
         
-        }
-        abstract public void issue();
+        System.out.println("Name: "+ name);
+        System.out.println("Title: "+ title);
+        System.out.println("Price: $"+price);
         
+       
+    }
 }
-   
-
-         
-
