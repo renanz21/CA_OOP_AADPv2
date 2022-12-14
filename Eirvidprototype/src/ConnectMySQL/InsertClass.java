@@ -12,12 +12,13 @@ package ConnectMySQL;
 public class InsertClass {
     
     public static void insertInformation(String name, String email, String password){
-            String newQuery = "INSERT INTO `mycadb`.`admin` (`name`, `email`, `password`) VALUES ('" + name + "', '" + email + ", '" + password + "');";
+            //String newQuery = "INSERT INTO `userinfo` (`name`, `email`, `password`) VALUES ('" + name + "', '" + email + ", '" + password + "');";
+            String newQuery = "INSERT INTO `ca_oop_aadp`.`userinfo` (`email`, `password`, `name`) VALUES ('" + email + "', '" + password + "', '" + name + "');";
             SQLConnection.connectSQL(newQuery);
     }
     
     public static void updateEmail(int id, String value){
-            String newQuery = "UPDATE `mycadb`.`admin` SET `email` = '" + value + "' WHERE (`id` = '" + id + "');";
+            String newQuery = "UPDATE `ca_oop_aadp`.`userinfo` SET `email` = '" + value + "' WHERE (`id` = '" + id + "');";
             SQLConnection.connectSQL(newQuery);        
     }
     

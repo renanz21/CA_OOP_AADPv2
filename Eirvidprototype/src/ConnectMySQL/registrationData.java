@@ -13,7 +13,7 @@ import ConnectMySQL.ReturnClass;
  * @author Lucresse Pearle Tchatchoua Mbakop- 2021404
  */
 public class registrationData {
-     static  void menu( )  {
+     public static void menu()  {
          try{
          System.out.println("Welcome to RTE Rental System");
          System.out.println("Please select One option");
@@ -22,9 +22,9 @@ public class registrationData {
           Scanner scan = new Scanner(System.in);
           int option= scan.nextInt();
           if (option == 1){
-              logIn();
-          }else if (option == 2){
               register();
+          }else if (option == 2){
+              logIn();
           }
          }
          catch (Exception e) {
@@ -34,7 +34,7 @@ public class registrationData {
     
     }
    
-     static void logIn()  {
+     public static void logIn()  {
         try {
             Scanner scan = new Scanner(System.in);
             System.out.println("----------------------------------------");
@@ -52,7 +52,7 @@ public class registrationData {
         }
     }
      
-      static void register() {
+      public static void register() {
         try {
             Scanner scan = new Scanner(System.in);
             System.out.println("----------------------------------------");
@@ -63,14 +63,20 @@ public class registrationData {
             System.out.println("Enter your email ");
             String email = scan.next();
             System.out.println("Enter your Password ");
-           String password = scan.next();
-           InsertClass.insertInformation(name, email, password);
+           String password = scan.next();           
            System.out.println("Retype  your Password ");
            String password1 = scan.next();
-            if(password1 != password){
-             System.out.println("error not similar");
+            if(password1.equals(password)){
+             System.out.println(" similar");
+             
+                System.out.println(name);
+                System.out.println(email);
+                System.out.println(password);
+                
+                InsertClass.insertInformation(name, email, password);
+               //logIn();
             }else{
-            logIn();
+            System.out.println("not  similar");
             }
            
         } catch (Exception e) {
