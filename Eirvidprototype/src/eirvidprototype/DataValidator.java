@@ -15,19 +15,20 @@ public class DataValidator {
     */
      public boolean ValidateData(String[] columns) {
 //      check if all the fields are incluided in the file
+//System.out.println(columns.length);
         if (columns.length != 11) {
             System.out.println("Warning: Incorrect file format");
             return false;
         }
         
 //      this check if the price is in the right format      
-        try {
-            Double.parseDouble(columns[10]);
-        } 
-        catch (Exception e) {
-             System.out.println("Warning: Movie price not a valid decimal");
-             return false;
-        }      
+//        try {
+//            Double.parseDouble(columns[11]);
+//        } 
+//        catch (Exception e) {
+//             System.out.println("Warning: Movie price not a valid decimal");
+//             return false;
+//        }      
         return true;
     }
     

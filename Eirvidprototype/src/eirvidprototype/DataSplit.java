@@ -14,6 +14,7 @@ public class DataSplit {
     This break the file apart everytime that there is a ",".
     */
     public String[] Seperate(String line) {
-        return line.split(",");        
+    //    return line.split(",");
+        return line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
     }
 }

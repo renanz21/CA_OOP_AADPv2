@@ -13,7 +13,7 @@ import java.util.List;
  * @author Amanda Lima
  */
 public class CSVFileProcessor {
-    public void ProcessTrades() throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException {
+    public void CSVFileProcessor() throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException {
         
         String inputFile = "Movie_Metadata_Edited_2.csv";
         DataImport dataImport = new DataImport();
@@ -52,5 +52,8 @@ class MoviesRecord {
     }
     
     
-    
+    @Override
+    public String toString() {
+        return "Title :" + this.title + " and price: " + price;
+    }
 }

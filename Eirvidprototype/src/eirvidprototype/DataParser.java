@@ -32,8 +32,10 @@ public class DataParser {
                 // Mapping
             movies.add(columnsMap.Map(columns));
             //}
-        });   
-        return movies;
-    }
+        };   
+        
+    });
+                return movies;
 
+}
 }
