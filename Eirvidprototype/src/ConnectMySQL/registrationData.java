@@ -63,14 +63,18 @@ public class registrationData {
             System.out.println("Enter your email ");
             String email = scan.next();
             System.out.println("Enter your Password ");
-           String password = scan.next();
-           
+           String password = scan.next();           
            System.out.println("Retype  your Password ");
            String password1 = scan.next();
             if(password1.equals(password)){
              System.out.println(" similar");
-             InsertClass.insertInformation(name, email, password);
-               logIn();
+             
+                System.out.println(name);
+                System.out.println(email);
+                System.out.println(password);
+                
+                InsertClass.insertInformation(name, email, password);
+               //logIn();
             }else{
             System.out.println("not  similar");
             }
