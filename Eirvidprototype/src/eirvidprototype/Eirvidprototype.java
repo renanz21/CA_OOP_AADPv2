@@ -6,6 +6,8 @@ package eirvidprototype;
 
 import ConnectMySQL.*;
 import eirvidprototype.IssueReceipt;
+import java.io.IOException;
+import java.util.List;
 
 /**
  *
@@ -16,7 +18,7 @@ public class Eirvidprototype {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException {
         
        
       /*  
@@ -45,7 +47,11 @@ public class Eirvidprototype {
             //InsertClass.insertInformation(name, email); 
             //DeleteClass.removeInformation();
            // InsertClass.updateEmail(id, value);
-          
+           
+
+
+            }
+           
     }
 
    
