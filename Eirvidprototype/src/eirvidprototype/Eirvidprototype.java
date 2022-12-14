@@ -5,7 +5,7 @@
 package eirvidprototype;
 
 import ConnectMySQL.*;
-import eirvidprototype.Receipt;
+import eirvidprototype.IssueReceipt;
 
 /**
  *
@@ -18,17 +18,36 @@ public class Eirvidprototype {
      */
     public static void main(String[] args) {
         
-        String name = "fela";
-        String email = "f@f5";
-        String password = "ff5";
-        
+       
+      /*  
+        String name = "Aaron Goodman";
+        String email = "cc@email.com";
+        int id = 2;
+
+        String value = "gg2@email.com";
             //ReturnClass.listInformation();
+
+        String value = "gg2@email.com";
+      
+        int price = 56;
+        String original_title = null;
+        String original_language = null;
+        double popularity = 0;
+        String tagline = null;
+        String title = null;
+        String overview = null;*/
+       String user ="Carol";  
+       String film = "ToyStory";
+       Double value = 20.00;
+       interfaceReceipt inter = new Receipt(value ,user, film);
+       inter.print();
             //ReturnClass.searchByName(name);
-            //InsertClass.insertInformation(name, email, password); 
+            //InsertClass.insertInformation(name, email); 
             //DeleteClass.removeInformation();
            // InsertClass.updateEmail(id, value);
-          registrationData.register();
-         
+          
     }
+
+   
     
 }

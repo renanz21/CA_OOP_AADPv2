@@ -31,9 +31,15 @@ public class saveData {
              System.out.println("your data remain unchange");   
                 }
      } 
+    public static void timeStamp(){
+    String timeStamp = "SELECT 5 FROM `ca_oop_aadp`.`rent` ";
+             SQLConnection.connectSQL(timeStamp);
+             System.out.println(timeStamp); 
+    
+    }
     
      public static void mostRented(String [] args){
-         String mostRented ="SELECT * FROM `ca_oop_aadp`.`userinfo` ORDER BY id LIMIT 5;";
+         String mostRented ="SELECT TOP 5 FROM `rent` WHERE MAX(countDown) ORDER BY movieID;";
          SQLConnection.connectSQL(mostRented);
          System.out.println(mostRented);   
      }
