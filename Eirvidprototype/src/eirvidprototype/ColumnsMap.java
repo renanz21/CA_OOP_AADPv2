@@ -38,6 +38,6 @@ public class ColumnsMap {
                 voteAverage,
                 voteCount,
                 price
-        );
-    
+        );  
+}
 }
