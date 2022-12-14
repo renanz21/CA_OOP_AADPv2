@@ -18,7 +18,7 @@ abstract class Receipt {
         String title = "";
         double price=0;
         
-        Receipt(String name, String title,double value ){
+        public void receipt(String name, String title,double value ){
             
             this.printname= name;
             this.title = title;
