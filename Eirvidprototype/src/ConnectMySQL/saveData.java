@@ -11,8 +11,8 @@ import java.util.Scanner;
  */
 public class saveData {
      // save the data of the user into the database 
-     public static void saveData(String original_title, int id ,double price){
-            String save ="INSERT INTO `ca_oop_aadp`.`userinfo` ('original_title', 'id', 'price') VALUES ('" + original_title + "', '" + id + "','" + price + "');";
+     public static void saveData(String title, int movieID ,double price, String name){
+            String save ="INSERT INTO `ca_oop_aadp`.`rent` ('movieID', 'title', 'price','name') VALUES ('" + movieID+ "', '" + title + "','" + price + "','" + name + "');";
             SQLConnection.connectSQL(save);
             System.out.println("movie name have been save in our database");        
      }
@@ -31,12 +31,13 @@ public class saveData {
              System.out.println("your data remain unchange");   
                 }
      } 
-    public static void timeStamp(){
+     
+    /*public static void timeStamp(){
     String timeStamp = "SELECT 5 FROM `ca_oop_aadp`.`rent` ";
              SQLConnection.connectSQL(timeStamp);
              System.out.println(timeStamp); 
     
-    }
+    }*/
     
      public static void mostRented(String [] args){
          String mostRented ="SELECT TOP 5 FROM `rent` WHERE MAX(countDown) ORDER BY movieID;";

@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package eirvidprototype;
+import ConnectMySQL.saveData;
 
 /**
  *
@@ -26,11 +27,9 @@ class Receipt implements interfaceReceipt {
         System.out.println("---------------------RECEIPT-----------------------------");
         System.out.println("_________________________________________________________");
         
-        
         System.out.println("Name: "+ name);
         System.out.println("Title: "+ title);
         System.out.println("Price: $"+price);
-        
-       
+        saveData.saveData(title, 0, price, name);
     }
 }
