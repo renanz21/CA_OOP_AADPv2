@@ -22,9 +22,9 @@ public class registrationData {
           Scanner scan = new Scanner(System.in);
           int option= scan.nextInt();
           if (option == 1){
-              logIn();
-          }else if (option == 2){
               register();
+          }else if (option == 2){
+              logIn();
           }
          }
          catch (Exception e) {

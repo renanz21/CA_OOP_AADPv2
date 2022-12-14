@@ -5,6 +5,7 @@
 package eirvidprototype;
 
 import ConnectMySQL.*;
+import eirvidprototype.Receipt;
 
 /**
  *
@@ -27,6 +28,7 @@ public class Eirvidprototype {
             //DeleteClass.removeInformation();
            // InsertClass.updateEmail(id, value);
           registrationData.register();
+         
     }
     
 }
