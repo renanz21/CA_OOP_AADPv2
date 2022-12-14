@@ -17,9 +17,11 @@ public class ReturnClass {
             
     }
     
-    public static void searchByName(String name){
+    public static String returnName(String name){
             String newQuery = "SELECT * FROM userinfo WHERE (`name` = '" + name + "');";
-            SQLConnection.connectSQL(newQuery);
+            String rName = null;
+            SQLConnection.connectSQL(newQuery, rName);
+            return rName;
             
     }
     
