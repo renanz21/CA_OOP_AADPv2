@@ -17,8 +17,8 @@ public class DataParser {
     /* This class was created based on Algorithms, architecture design patterns classes
    
     */
-    public List<MovieRecord> ParseData(List<String> lines) {
-        List<MovieRecord> movies = new ArrayList<>();
+    public List<MoviesRecord> ParseData(List<String> lines) {
+        List<MoviesRecord> movies = new ArrayList<>();
         DataSplit dataSplit = new DataSplit();
         DataValidator dataValidator = new DataValidator();
         ColumnsMap columnsMap = new ColumnsMap();
