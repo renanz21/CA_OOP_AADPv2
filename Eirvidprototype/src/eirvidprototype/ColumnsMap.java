@@ -12,14 +12,14 @@ package eirvidprototype;
  */
 public class ColumnsMap {
     /* This class was created based on Algorithms, architecture design patterns classes
-    This create a BufferedReader, read the lines in the file into a Arraylist and return the lines
+    
     */
     public MoviesRecord Map(String[] columns) {
         String originalLanguage = columns[0];
         String originalTitle = columns[1];
         String overview = columns[2];
         double popularity = Double.parseDouble(columns[3]);
-        //find how to get realease date
+        //find how to get date
         int runtime = Integer.parseInt(columns[5]);
         String tagline = columns[6];
         String title = columns[7];
