@@ -29,18 +29,18 @@ public class Eirvidprototype {
         String value = "gg2@email.com";*/
             //ReturnClass.listInformation();
 
-      // CSVFileProcessor csv = new CSVFileProcessor();
-       //csv.CSVFileProcessor();
+       CSVFileProcessor csv = new CSVFileProcessor();
+       csv.CSVFileProcessor();
        
-       UI user2 = new UI();
-       user2.UI();
-       
-       String user ="Carol";  
-       String film = "ToyStory";
-       Double value = 20.00;
-       
-       interfaceReceipt inter = new Receipt(value ,user, film);
-       inter.print();
+//       UI user2 = new UI();
+//       user2.UI();
+//       
+//       String user ="Carol";  
+//       String film = "ToyStory";
+//       Double value = 20.00;
+//       
+//       interfaceReceipt inter = new Receipt(value ,user, film);
+//       inter.print();
             //ReturnClass.searchByName(name);
             //InsertClass.insertInformation(name, email); 
             //DeleteClass.removeInformation();
