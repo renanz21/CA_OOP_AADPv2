@@ -56,7 +56,11 @@ public class UI {
                     System.out.println("Type the movie ID or 0 for cancel");
                     selectedMovieId = userInput.nextInt();
                     movieLocate = csv.FindMovieById(selectedMovieId);
-                    System.out.println("User: " + name);                      
+                    System.out.println("User: " + name); 
+                    
+                    //Method to record the movie piked in the database
+                    
+                    
                 }
                  
                 if(selectedMovieId == 0){

@@ -29,8 +29,8 @@ public class Eirvidprototype {
         String value = "gg2@email.com";*/
             //ReturnClass.listInformation();
 
-       CSVFileProcessor csv = new CSVFileProcessor();
-       csv.CSVFileProcessor();
+//       CSVFileProcessor csv = new CSVFileProcessor();
+//       csv.CSVFileProcessor();
        
 
        UI user2 = new UI();
