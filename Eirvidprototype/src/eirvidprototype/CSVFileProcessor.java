@@ -14,7 +14,9 @@ import java.util.List;
  */
 public class CSVFileProcessor {
     public void CSVFileProcessor() throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException {
+
         String inputFile = "Movie_Metadata_Edited_2.csv";
+
         DataImport dataImport = new DataImport();
         DataParser dataParser = new DataParser();
         //this line initiate the class test
