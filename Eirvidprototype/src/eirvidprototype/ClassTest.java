@@ -18,6 +18,7 @@ public class ClassTest {
            //this loop read all the lines
             for (MoviesRecord movie : movies) {
                //here all the code needed for the other classes can be used to parser the information on the list for the database or any other use 
+               //when you use "movie." all the variable available are going to show up and you can just use what you need 
               System.out.println("Title: " + movie.title + " - £" + movie.price);
             }            
     
