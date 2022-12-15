@@ -85,7 +85,7 @@ public class SQLConnection {
                             * SQL Excpetion code in case needed for troubleshooting
                             */ 
                         
-                        System.out.println( e ) ;
+                        //System.out.println( e ) ;
                         }
                 
 		}
