@@ -20,7 +20,6 @@ public class CSVFileProcessor {
         DataParser dataParser = new DataParser();
         //this line initiate the class test
         ClassTest test = new ClassTest();
-        
         List<String> lines = dataImport.InputData(inputFile);
         List<MoviesRecord> movies = dataParser.ParseData(lines);
         //this parser the list as a paramenter using the variable movies that was created here
