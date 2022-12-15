@@ -15,12 +15,10 @@ public class ClassTest {
     
     //this class receive the list of movies as a parameter, I used so you guys could see it how to get information from the CVSFileProcessor, pls go to the CVSFileProcessor to see the final step 
     public void outputData(List<MoviesRecord> movies) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
-           //this loop read all the lines
-            for (MoviesRecord movie : movies) {
-               //here all the code needed for the other classes can be used to parser the information on the list for the database or any other use 
-              System.out.println("Title: " + movie.title + " - £" + movie.price);
-            }            
-    
-    
-}
+        //this loop read all the lines
+         for (MoviesRecord movie : movies) {
+            //here all the code needed for the other classes can be used to parser the information on the list for the database or any other use 
+           System.out.println("Id:" + movie.id + " - Title: " + movie.title + " - £" + movie.price);
+         }            
+    }
 }

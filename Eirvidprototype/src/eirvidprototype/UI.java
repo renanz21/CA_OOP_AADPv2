@@ -7,6 +7,8 @@ package eirvidprototype;
 import java.util.Scanner;
 import eirvidprototype.PasswordGenerator;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
         
 
 public class UI {
@@ -39,40 +41,37 @@ public class UI {
              
              Boolean e = email.matches(EMAIL_REGEX);
              
+             int selectedMovieId = 1000000000;
+             
              if(e==true){
                                  
                  System.out.println("Welcome to EirVid! Your password is: " + PasswordGenerator.createPassword(8) );
                  
-                 System.out.println("Choose a movie from our list typing only the number.");
-                 
-                 CSVFileProcessor csv = new CSVFileProcessor();
-                 
-                 csv.CSVFileProcessor();
-                 
-                 String chmovie = userinput2.nextLine();
-                 
-                 String numberRegex = "[0-9]+";
                 
-                 Boolean m = chmovie.matches(numberRegex);
+                boolean movieLocate = false;
+                while(selectedMovieId != 0 && !movieLocate){
+                    System.out.println("Choose a movie from our list. Put the Id movie or 0 for cancel");
+                    CSVFileProcessor csv = new CSVFileProcessor();                 
+                    csv.CSVFileProcessor();                 
+                    System.out.println("Type the movie ID or 0 for cancel");
+                    selectedMovieId = userInput.nextInt();
+                    movieLocate = csv.FindMovieById(selectedMovieId);
+                    System.out.println("User: " + name);                      
+                }
                  
-                  
-                  
-                  
-                  
-                 if(m==true){
-                     
-                 }else{
-                     
-                     System.out.println("Please type only numerical data.");
-                 }
-                 
-             }else{
+                if(selectedMovieId == 0){
+                    System.out.println("See you soon!");
+                }
+                else{
+                    
+                }
+             }
+             else{
                  
                  System.out.println("Type a valid e-mail.");
-                 
              }
-            
-               
+             
+             
          }else if(opreg==2){
              
              System.out.println("See you soon!");

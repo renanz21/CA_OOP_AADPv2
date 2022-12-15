@@ -39,8 +39,8 @@ public class Eirvidprototype {
        String film = "ToyStory";
        Double value = 20.00;
        
-       interfaceReceipt inter = new Receipt(value ,user, film);
-       inter.print();
+      // interfaceReceipt inter = new Receipt(value ,user, film);
+       //inter.print();
             //ReturnClass.searchByName(name);
             //InsertClass.insertInformation(name, email); 
             //DeleteClass.removeInformation();

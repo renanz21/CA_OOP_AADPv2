@@ -15,11 +15,7 @@ class Receipt implements interfaceReceipt {
     String title;
     double price;
     
-    Receipt(double price, String name, String title){
-       this.price = price;
-       this.name= name;
-       this.title = title;
-    }
+   
     
     @Override
     public void print(){
@@ -34,9 +30,9 @@ class Receipt implements interfaceReceipt {
         System.out.println("---------------------RECEIPT-----------------------------");
         System.out.println("_________________________________________________________");
         
-        System.out.println("Name: "+ name);
-        System.out.println("Title: "+ title);
-        System.out.println("Price: $"+price);
+        System.out.println("Name: "+ csv.equals(name));
+        System.out.println("Title: "+ csv.equals(title));
+        System.out.println("Price: $"+csv.equals(price));
         saveData.saveData(title, 0, price, name);
        }catch(Exception e){
            

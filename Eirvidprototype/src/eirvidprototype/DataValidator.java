@@ -16,7 +16,7 @@ public class DataValidator {
      public boolean ValidateData(String[] columns) {
 //      check if all the fields are incluided in the file
 //System.out.println(columns.length);
-        if (columns.length != 11) {
+        if (columns.length != 12) {
             System.out.println("Warning: Incorrect file format");
             return false;
         }

@@ -14,7 +14,6 @@ import java.util.List;
  */
 public class CSVFileProcessor {
     public void CSVFileProcessor() throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException {
-        
         String inputFile = "Movie_Metadata_Edited_2.csv";
         DataImport dataImport = new DataImport();
         DataParser dataParser = new DataParser();
@@ -24,11 +23,34 @@ public class CSVFileProcessor {
         List<MoviesRecord> movies = dataParser.ParseData(lines);
         //this parser the list as a paramenter using the variable movies that was created here
         test.outputData(movies);
+    }
+    
+    public boolean FindMovieById(int Id) throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException {
+        String inputFile = "Movie_Metadata_Edited_2.csv";
+        DataImport dataImport = new DataImport();
+        DataParser dataParser = new DataParser();
+        //this line initiate the class test
+        List<String> lines = dataImport.InputData(inputFile);
+        List<MoviesRecord> movies = dataParser.ParseData(lines);
+        //this parser the list as a paramenter using the variable movies that was created here
         
+        boolean locate = false;
+        for (MoviesRecord movie : movies) {
+            if(Id == movie.id){
+                locate = true;
+                System.out.println("Movie: " + movie.title + "Price: " + movie.price);
+                break;
+            }
+        }        
+        if(!locate){
+            System.out.println("Movie not found.");
+        }  
+        return locate;
     }
 }
 
 class MoviesRecord { 
+        int id;
         String originalLanguage;
         String originalTitle;
         String overview;
@@ -41,7 +63,8 @@ class MoviesRecord {
         int voteCount;
         double price;
 
-    public MoviesRecord(String originalLanguage, String originalTitle, String overview, double popularity, int runtime, String tagline, String title, double voteAverage, int voteCount, double price) {
+    public MoviesRecord(int id, String originalLanguage, String originalTitle, String overview, double popularity, int runtime, String tagline, String title, double voteAverage, int voteCount, double price) {
+        this.id = id;
         this.originalLanguage = originalLanguage;
         this.originalTitle = originalTitle;
         this.overview = overview;
