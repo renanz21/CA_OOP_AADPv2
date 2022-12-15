@@ -48,13 +48,10 @@ public class Eirvidprototype {
            // InsertClass.updateEmail(id, value);
            
            
-// before getting any variable from the cvs classes, use this two lines, you need to call the class and start it            
-//           CSVFileProcessor csv = new CSVFileProcessor();
-//           csv.CSVFileProcessor();
-           
-           
-
-
+// before getting any variable from the cvs classes, use this two lines, you need to call the class and start it
+//this lines needs to be initiated preferable at the top
+           CSVFileProcessor csv = new CSVFileProcessor();
+           csv.CSVFileProcessor();
             }
            
     }

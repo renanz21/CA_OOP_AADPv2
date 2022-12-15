@@ -18,9 +18,13 @@ public class CSVFileProcessor {
         String inputFile = "Movie_Metadata_Edited_2.csv";
         DataImport dataImport = new DataImport();
         DataParser dataParser = new DataParser();
-               
+        //this line initiate the class test
+        ClassTest test = new ClassTest();
+        
         List<String> lines = dataImport.InputData(inputFile);
         List<MoviesRecord> movies = dataParser.ParseData(lines);
+        //this parser the list as a paramenter using the variable movies that was created here
+        test.outputData(movies);
         
     }
 }
@@ -53,10 +57,5 @@ class MoviesRecord {
         //for testing only
         //System.out.println(this.price + " " + this.title);
     }
-    
-    
-    @Override
-    public String toString() {
-        return "Title :" + this.title + " and price: " + price;
-    }
+        
 }
