@@ -4,6 +4,7 @@
  */
 package eirvidprototype;
 
+import ConnectMySQL.InsertClass;
 import java.util.Scanner;
 import eirvidprototype.PasswordGenerator;
 import java.io.IOException;
@@ -57,8 +58,6 @@ public class UI {
                     selectedMovieId = userInput.nextInt();
                     movieLocate = csv.FindMovieById(selectedMovieId);
                     System.out.println("User: " + name); 
-                    
-                    //Method to record the movie piked in the database
                     
                     
                 }

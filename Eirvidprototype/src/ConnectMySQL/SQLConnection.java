@@ -100,8 +100,9 @@ public class SQLConnection {
 		}
     }
     
-static void connectSQL(String query, String name){
-        
+    public boolean connectSQL2(String query){
+    
+        boolean isFound = false;
         try{
 			// Load the database driver
                         Class.forName("com.mysql.cj.jdbc.Driver");
@@ -125,17 +126,11 @@ static void connectSQL(String query, String name){
 			
 			// Loop through the result set
                         
-                        boolean isFound = false;
-                        while ((!rs.getString("name").equals(name))){
-                            rs.next();
-                            isFound = true;
-                            
-                        }
-                        if (isFound == true){
+                        while(rs.next()) {
                             System.out.println("Found");
-                        } else {
-                            System.out.println("404: User not found");
+                            isFound = true;
                         }
+                        
 
 			// Close the result set
 			rs.close() ;                      
@@ -174,5 +169,7 @@ static void connectSQL(String query, String name){
                         
                         //System.out.println( e ) ;
 		}
+        
+        return isFound;
     }
 }

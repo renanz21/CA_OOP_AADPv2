@@ -22,7 +22,16 @@ public class InsertClass {
             SQLConnection.connectSQL(newQuery);        
     }
     
-   
+    public static void updateMovie(int movieID, String title, double price, int counter){
+            String newQuery = "INSERT INTO `ca_oop_aadp`.`rent` (`movieID`, `title`, `price`, `counter`) VALUES ('" + movieID + "', '" + title + "', '" + price + "', '" + counter + "');";
+            SQLConnection.connectSQL(newQuery);
+    }
     
+    public static void updateMovie(int movieID){
+            String newQuery = "UPDATE `ca_oop_aadp`.`rent` SET `counter` = `counter`+1 WHERE (`movieID` = '" + movieID +"');";
+            SQLConnection.connectSQL(newQuery);
+    }
 }
+    
+
 

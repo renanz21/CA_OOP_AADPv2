@@ -17,11 +17,13 @@ public class ReturnClass {
             
     }
     
-    public static String returnName(String name){
-            String newQuery = "SELECT * FROM userinfo WHERE (`name` = '" + name + "');";
-            String rName = null;
-            SQLConnection.connectSQL(newQuery, rName);
-            return rName;
+    public boolean returnMovieID(int movieID){
+            
+            SQLConnection obj = new SQLConnection();
+            String newQuery = "SELECT * FROM rent WHERE (`movieID` = '" + movieID + "');";
+            boolean result = obj.connectSQL2(newQuery);
+                    
+            return result;
             
     }
     

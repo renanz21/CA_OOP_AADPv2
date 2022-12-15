@@ -21,23 +21,14 @@ public class Eirvidprototype {
     public static void main(String[] args) throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException {
         
        
-      /*  
-        String name = "Aaron Goodman";
-        String email = "cc@email.com";
-        int id = 2;
-
-        String value = "gg2@email.com";*/
-            //ReturnClass.listInformation();
-
 //       CSVFileProcessor csv = new CSVFileProcessor();
 //       csv.CSVFileProcessor();
        
-
+        
+           
        UI user2 = new UI();
        user2.UI();
-       
       
-       
       // interfaceReceipt inter = new Receipt(value ,user, film);
        //inter.print();
 
