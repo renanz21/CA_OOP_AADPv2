@@ -25,7 +25,7 @@ public class Eirvidprototype {
 //       csv.CSVFileProcessor();
        
         
-        ReturnClass.listTopRented();
+        registrationData.menu();
 //       UI user2 = new UI();
 //       user2.UI();
       
