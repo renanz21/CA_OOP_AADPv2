@@ -48,7 +48,7 @@ public class CSVFileProcessor {
                 System.out.println("Movie: " + movie.title + "Price: " + movie.price);
                 
                 ReturnClass search = new ReturnClass();
-                boolean isFound = search.returnMovieID(movie.id);
+                boolean isFound = search.returnMovieIsFound(movie.id);
                 
                 if (isFound == false){
                     InsertClass.updateMovie(movie.id, movie.title, movie.price, 1);
