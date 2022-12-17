@@ -13,7 +13,7 @@ import ConnectMySQL.ReturnClass;
  * @author Lucresse Pearle Tchatchoua Mbakop- 2021404
  */
 
-//Bk
+//Backup registrationData Class
 
 //public class registrationData {
 //     public static void menu()  {

@@ -14,8 +14,11 @@ import java.sql.Statement;
  *
  * @author Renan Gomes
  * @SN 2020295
+ * 
  */
 public class SQLConnection {
+    
+    //First connection to insert information in the userinfo table of the database
     
     static void connectSQL(String query){
         
@@ -100,6 +103,8 @@ public class SQLConnection {
 		}
     }
     
+    //Second connection to search if movie is already in the table, if so return boolean value true
+    
     public boolean connectSQL2(String query){
     
         boolean isFound = false;
@@ -172,6 +177,8 @@ public class SQLConnection {
         
         return isFound;
     }
+    
+    //Third connection to insert a movie in the rent table of the database
     
     static void connectSQL3(String query){
         

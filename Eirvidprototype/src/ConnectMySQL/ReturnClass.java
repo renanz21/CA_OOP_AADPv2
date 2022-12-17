@@ -8,8 +8,11 @@ package ConnectMySQL;
  *
  * @author Renan Gomes
  * @SN 2020295
+ * 
  */
 public class ReturnClass {
+    
+    //Query to list user information from database
     
     public static void listUserInformation(){
         
@@ -18,6 +21,8 @@ public class ReturnClass {
             
     }
     
+    //Query to filter and order top 5 movies rented based on the counter field
+    
      public static void listTopRented(){
         
             String newQuery = "SELECT * FROM rent ORDER BY counter DESC LIMIT 5;";
@@ -25,6 +30,8 @@ public class ReturnClass {
             
     }
     
+    //Query to search if movie already exists in the database
+     
     public boolean returnMovieIsFound(int movieID){
         
             SQLConnection obj = new SQLConnection();
