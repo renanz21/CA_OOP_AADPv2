@@ -179,7 +179,7 @@ public class SQLConnection {
         return isFound;
     }
     
-    //Third connection to insert a movie in the rent table of the database
+    //Third connection to fetch top 5 movies from previous 5 minutes
     
     static void connectSQL3(String query){
         
@@ -207,7 +207,7 @@ public class SQLConnection {
 			// Loop through the result set
                         
 			while(rs.next()) {
-				System.out.println( "Title " + rs.getString("movieTitle") + "Picked " + rs.getString("COUNT(movieTitle)") + " times.");
+				System.out.println( "Title: " + rs.getString("movieTitle") + " Picked " + rs.getString("COUNT(movieTitle)") + " times.");
                            }
 
 			// Close the result set
