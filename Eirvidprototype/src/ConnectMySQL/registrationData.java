@@ -25,39 +25,40 @@ public class registrationData {
          System.out.println("1-Register");
          System.out.println("2-Log in");
          System.out.println("0-Exit");
-          Scanner scan = new Scanner(System.in);
-          int option= scan.nextInt();
+         // THIS CODE , ASK THE SOME INPUTS TO THE USER
+          Scanner scan = new Scanner(System.in);// CREATE A SCANNER TO BE ABLE TO STORE THE USER SELECTION
+          int option= scan.nextInt();// PARSE THE USER SELECTION INTO A VARIABLE
           
           switch (option) {
               case 0:
-                  System.out.println("Bye");
-                  break;
+                  System.out.println("Bye");// IN CASE THE USER WANT TO EXIT THE PROGRAM
+                  break;// BREAK IS USE TO STOP THE IMPLEMENTATION OF THE PROGRAM
               case 1:
-                  register();
+                  register();// THE REGISTER METHOD IS CALLED
                   break;
               case 2:
-                  logIn();
+                  logIn();// THE LOGIN METHOD IS CALL TO TAKE IN THE USER INFORMATION
                   break;
           }
          }
          catch (Exception e) {
-            System.out.println("please choose one of the option above ");
+            System.out.println("please choose one of the option above ");// THE ExceptION ,IN THE CASE NO SELECTION IS MADE BY THE USER
         }
          
     
     }
    
-     public static void logIn()  {
+     public static void logIn()  {// THE LOGIN METHOD IS CREATED 
         try {
-            Scanner scan = new Scanner(System.in);
+            Scanner scan = new Scanner(System.in);// CREATE A SCANNER TO TAKE THE USER INPUT 
             System.out.println("----------------------------------------");
-            System.out.println("Welcome dear Customer");
+            System.out.println("Welcome dear Customer");//
             System.out.println("----------------------------------------");
             System.out.println("Enter your email ");
-            String email = scan.next();
+            String email = scan.next();// STORE THE USER EMAIL INTO A VARIABLE
             System.out.println("Enter your Password ");
-           String password = scan.next();
-           ReturnClass.searchByEmail(email);
+           String password = scan.next();// 
+           ReturnClass.searchByEmail(email);// RETURN THE USER HISTORY 
            
         } catch (Exception e) {
             System.out.println(" Your informations are not found in our system");
@@ -65,49 +66,72 @@ public class registrationData {
         }
     }
      
-      public static void register() {
+      public static void register() {// CREATE A METHOD 
         try {
-            Scanner scan = new Scanner(System.in);
-            System.out.println("----------------------------------------");
-            System.out.println("Welcome  to RTE");
-            System.out.println("----------------------------------------");
-            System.out.println("Enter your name ");
-            String name = scan.next();
-            System.out.println("Enter your email ");
-            String email = scan.next();
+           
+         do {
+             Scanner userInput = new Scanner (System.in);
+             System.out.println("Do you want to Register on EirVid?");
+             System.out.println("TYPE ONLY NUMERICAL DATA! ");
+             System.out.println("1 for YES or 2 for NO:");
+             String opreg = userInput.nextLine();
             
-            String EMAIL_REGEX = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
-             
-            Boolean e = email.matches(EMAIL_REGEX);
-             
-            int selectedMovieId = 1000000000;
-            
-            if(e==true){
-                
-                String password = PasswordGenerator.createPassword(8);
-                System.out.println("Welcome to EirVid! Your password is: " + password );
-                InsertClass.insertInformation(name, email, password);
-                
-                boolean movieLocate = false;
-                while(selectedMovieId != 0 && !movieLocate){
-                    System.out.println("Choose a movie from our list. Put the Id movie or 0 for cancel");
-                    CSVFileProcessor csv = new CSVFileProcessor();                 
-                    csv.CSVFileProcessor();                 
-                    System.out.println("Type the movie ID or 0 for cancel");
-                    selectedMovieId = scan.nextInt();
-                    movieLocate = csv.FindMovieById(selectedMovieId);
-                    System.out.println("User: " + name); 
-                    
-                    
-                }
-                 
-                if(selectedMovieId == 0){
-                    System.out.println("See you soon!");
-                }
-                else{
-                    
-                }
-               }
+//REGISTER USER
+
+                 switch (opreg) {
+    //If the user type 1 the registration will be done 
+                     case "1":
+                         Scanner userinput2 = new Scanner(System.in);
+                         System.out.println("NAME: ");
+                         String name = userinput2.nextLine();
+                         System.out.println("E-MAIL: ");
+                         String email = userinput2.nextLine();
+                         String EMAIL_REGEX = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
+    //Verify if it is a valid email input
+                         Boolean e = email.matches(EMAIL_REGEX);
+                         int selectedMovieId = 1000000000;
+                         
+   //If it is a valid email input the system will generate a random password                        
+                         if(e==true){
+   //Output the password generated by the PasswordGenerator class                         
+                             System.out.println("Welcome to EirVid! Your password is: " + PasswordGenerator.createPassword(8) );
+                             
+                             boolean movieLocate = false;
+                             
+                             while(selectedMovieId != 0 && !movieLocate){
+                                 System.out.println("Choose a movie from our list typing the ID:");
+   //Display the movie list                              
+                                 CSVFileProcessor csv = new CSVFileProcessor();
+                                 csv.CSVFileProcessor();
+                                 
+                                 System.out.println("Type the movie ID:");
+                                
+                                 selectedMovieId = userInput.nextInt();
+    //If the input for select a movie ID is not 0 or a movie that is not on the list the system will display the receipt                             
+                                 System.out.println("----------------------RECEIPT--------------------");
+                                 movieLocate = csv.FindMovieById(selectedMovieId);
+                                 System.out.println("User: " + name);
+                                 System.out.println("-------------------------------------------------");
+
+                              
+                             }
+                                                         
+                        }else{
+   //If the email chose by the user doesn't follow an e-mail pattern system will out put the following                   
+                             System.out.println("Type a valid e-mail.");
+                             register();// THIS IMPLEMENTS THE METHOD AGAIN , IN CASE THE INPUT DOES NOT MATCH THE PROGRAM EXPECTED VALUES
+                         }           
+                     case "2":
+                         System.out.println("See you soon!");
+                         break;
+                         
+                     default:
+                         System.out.println("Please type only numerical data between 1 to 2.");
+                         break;
+                               }
+        }while (false);
+ 
+
 //            System.out.println("Enter your Password ");
 //           String password = scan.next();           
 //           System.out.println("Retype  your Password ");
