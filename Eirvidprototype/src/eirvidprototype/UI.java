@@ -10,21 +10,28 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
         
-
+/*
+@Carolina Franco do Prado
+Student ID: 2020354
+*/
 public class UI {
     
      public void UI() throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException{ 
-         
+   
+         for (int i = 1; i > 0; i++ ){ 
+             
          Scanner userInput = new Scanner (System.in);
         
          System.out.println("Do you want to Register on EirVid?");
          
-         System.out.println("Type 1 for YES or 2 for NO:");
+         System.out.println("TYPE ONLY NUMERICAL DATA! ");
+             System.out.println("1 for YES or 2 for NO:");
          
          int opreg = userInput.nextInt();
-         
+        
 
-//Register the user         
+//Register the user
+
          if(opreg==1){
              
              Scanner userinput2 = new Scanner(System.in);
@@ -46,24 +53,27 @@ public class UI {
              if(e==true){
                                  
                  System.out.println("Welcome to EirVid! Your password is: " + PasswordGenerator.createPassword(8) );
-                 
-                
+                        
                 boolean movieLocate = false;
+                
                 while(selectedMovieId != 0 && !movieLocate){
                     System.out.println("Choose a movie from our list. Put the Id movie or 0 for cancel");
+                    
                     CSVFileProcessor csv = new CSVFileProcessor();                 
-                    csv.CSVFileProcessor();                 
+                    csv.CSVFileProcessor();      
+                    
                     System.out.println("Type the movie ID or 0 for cancel");
+                    
                     selectedMovieId = userInput.nextInt();
                     movieLocate = csv.FindMovieById(selectedMovieId);
+                    
                     System.out.println("User: " + name);                      
                 }
                  
                 if(selectedMovieId == 0){
                     System.out.println("See you soon!");
                 }
-                else{
-                    
+                else{    
                 }
              }
              else{
@@ -75,14 +85,11 @@ public class UI {
          }else if(opreg==2){
              
              System.out.println("See you soon!");
-             
+                     
          }else{
              System.out.println("Please type only numerical data between 1 to 2.");
          }
          
-    }
-     
-       
-       
-      
+     }
+}
 }
