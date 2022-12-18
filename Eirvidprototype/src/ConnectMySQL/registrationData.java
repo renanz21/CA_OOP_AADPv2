@@ -68,7 +68,7 @@ public class registrationData {
      
       public static void register() {// CREATE A METHOD 
         try {
-            OUTER:
+           
          do {
              Scanner userInput = new Scanner (System.in);
              System.out.println("Do you want to Register on EirVid?");
@@ -123,7 +123,7 @@ public class registrationData {
                          }           
                      case "2":
                          System.out.println("See you soon!");
-                         break OUTER;
+                         break;
                          
                      default:
                          System.out.println("Please type only numerical data between 1 to 2.");
