@@ -78,8 +78,8 @@ public class UI {
                      default:
                          System.out.println("Please type only numerical data between 1 to 2.");
                          break;
-                 }
-             }while (false);
+                               }
+        }while (false);
      }
 }
 
