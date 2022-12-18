@@ -8,11 +8,14 @@ package ConnectMySQL;
  *
  * @author Renan Gomes
  * @SN 2020295
+ * 
  */
 public class RemoveClass {
     
-    public static void removeInformation(){
-            String newQuery = "DELETE FROM `ca_oop_aadp`.`userinfo` WHERE (`id` = '1'))";
+    //Query to remove the movie from the rented list
+    
+    public static void removeMovie(int id){
+            String newQuery = "DELETE FROM `ca_oop_aadp`.`rent` WHERE (`id` = '" + id +"'))";
             SQLConnection.connectSQL(newQuery);
     }    
 }

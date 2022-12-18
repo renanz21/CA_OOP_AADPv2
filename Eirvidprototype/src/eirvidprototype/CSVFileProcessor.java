@@ -5,6 +5,8 @@
  */
 package eirvidprototype;
 
+import ConnectMySQL.InsertClass;
+import ConnectMySQL.ReturnClass;
 import java.io.IOException;
 import java.util.List;
 
@@ -15,7 +17,7 @@ import java.util.List;
 public class CSVFileProcessor {
     public void CSVFileProcessor() throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException {
 
-        String inputFile = "Movie_Metadata_Edited_2.csv";
+        String inputFile = "Movie_Metadata_Edited_2_Small.csv";
 
         DataImport dataImport = new DataImport();
         DataParser dataParser = new DataParser();
@@ -26,9 +28,10 @@ public class CSVFileProcessor {
         //this parser the list as a paramenter using the variable movies that was created here
         test.outputData(movies);
     }
+
     
     public boolean FindMovieById(int Id) throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException {
-        String inputFile = "Movie_Metadata_Edited_2.csv";
+        String inputFile = "Movie_Metadata_Edited_2_Small.csv";
         DataImport dataImport = new DataImport();
         DataParser dataParser = new DataParser();
         //this line initiate the class test
@@ -36,11 +39,23 @@ public class CSVFileProcessor {
         List<MoviesRecord> movies = dataParser.ParseData(lines);
         //this parser the list as a paramenter using the variable movies that was created here
         
+        
+        
         boolean locate = false;
         for (MoviesRecord movie : movies) {
             if(Id == movie.id){
                 locate = true;
                 System.out.println("Movie: " + movie.title + "Price: " + movie.price);
+                
+                ReturnClass search = new ReturnClass();
+                boolean isFound = search.returnMovieIsFound(movie.id);
+                
+                if (isFound == false){
+                    InsertClass.updateMovie(movie.id, movie.title, movie.price, 1);
+                } else {
+                    InsertClass.updateMovie(movie.id);
+                }
+                
                 break;
             }
         }        
@@ -49,7 +64,10 @@ public class CSVFileProcessor {
         }  
         return locate;
     }
+
 }
+
+
 
 class MoviesRecord { 
         int id;
