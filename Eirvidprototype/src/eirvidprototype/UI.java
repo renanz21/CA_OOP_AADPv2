@@ -69,6 +69,7 @@ public class UI {
                         }else{
    //If the email chose by the user doesn't follow an e-mail pattern system will out put the following                   
                              System.out.println("Type a valid e-mail.");
+                             UI();// THIS IMPLEMENTS THE METHOD AGAIN , IN CASE THE INPUT DOES NOT MATCH THE PROGRAM EXPECTED VALUES
                          }           
                      case "2":
                          System.out.println("See you soon!");

@@ -25,39 +25,40 @@ public class registrationData {
          System.out.println("1-Register");
          System.out.println("2-Log in");
          System.out.println("0-Exit");
-          Scanner scan = new Scanner(System.in);
-          int option= scan.nextInt();
+         // THIS CODE , ASK THE SOME INPUTS TO THE USER
+          Scanner scan = new Scanner(System.in);// CREATE A SCANNER TO BE ABLE TO STORE THE USER SELECTION
+          int option= scan.nextInt();// PARSE THE USER SELECTION INTO A VARIABLE
           
           switch (option) {
               case 0:
-                  System.out.println("Bye");
-                  break;
+                  System.out.println("Bye");// IN CASE THE USER WANT TO EXIT THE PROGRAM
+                  break;// BREAK IS USE TO STOP THE IMPLEMENTATION OF THE PROGRAM
               case 1:
-                  register();
+                  register();// THE REGISTER METHOD IS CALLED
                   break;
               case 2:
-                  logIn();
+                  logIn();// THE LOGIN METHOD IS CALL TO TAKE IN THE USER INFORMATION
                   break;
           }
          }
          catch (Exception e) {
-            System.out.println("please choose one of the option above ");
+            System.out.println("please choose one of the option above ");// THE ExceptION ,IN THE CASE NO SELECTION IS MADE BY THE USER
         }
          
     
     }
    
-     public static void logIn()  {
+     public static void logIn()  {// THE LOGIN METHOD IS CREATED 
         try {
-            Scanner scan = new Scanner(System.in);
+            Scanner scan = new Scanner(System.in);// CREATE A SCANNER TO TAKE THE USER INPUT 
             System.out.println("----------------------------------------");
-            System.out.println("Welcome dear Customer");
+            System.out.println("Welcome dear Customer");//
             System.out.println("----------------------------------------");
             System.out.println("Enter your email ");
-            String email = scan.next();
+            String email = scan.next();// STORE THE USER EMAIL INTO A VARIABLE
             System.out.println("Enter your Password ");
-           String password = scan.next();
-           ReturnClass.searchByEmail(email);
+           String password = scan.next();// 
+           ReturnClass.searchByEmail(email);// RETURN THE USER HISTORY 
            
         } catch (Exception e) {
             System.out.println(" Your informations are not found in our system");
@@ -65,28 +66,27 @@ public class registrationData {
         }
     }
      
-      public static void register() {
+      public static void register() {// CREATE A METHOD 
         try {
             Scanner scan = new Scanner(System.in);
             System.out.println("----------------------------------------");
             System.out.println("Welcome  to RTE");
             System.out.println("----------------------------------------");
             System.out.println("Enter your name ");
-            String name = scan.next();
+            String name = scan.next();// STORE THE USER INPUT INTO A VARIABLE
             System.out.println("Enter your email ");
-            String email = scan.next();
-            
-            String EMAIL_REGEX = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
+            String email = scan.next();// STORE THE USER EMAIL INTO THE A VARIABLE 
+            String EMAIL_REGEX = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";// A REGEX IS IMPLEMENTED ON THE EMAIL FOR THE USER TO INPUT AND EMAIL FORMAT "@" IS REQUIRED
              
-            Boolean e = email.matches(EMAIL_REGEX);
+            Boolean e = email.matches(EMAIL_REGEX);// A VARIABLE e IS CREATED
              
             int selectedMovieId = 1000000000;
             
-            if(e==true){
+            if(e==true){// CONDITION IF THE e FORMAT IS EQUAL TO THE USER INPUT
                 
-                String password = PasswordGenerator.createPassword(8);
-                System.out.println("Welcome to EirVid! Your password is: " + password );
-                InsertClass.insertInformation(name, email, password);
+                String password = PasswordGenerator.createPassword(8);// THE PROGRAM GENERATES A PASSWORD (BASE ON THE PASSEWORDGENERETOR CLASS)
+                System.out.println("Welcome to EirVid! Your password is: " + password );// OUT PUT THE PASSWORD GENERATED TO THE USER
+                InsertClass.insertInformation(name, email, password);// STORED , THE SAVE DATA INTO THE DATABASE
                 
                 boolean movieLocate = false;
                 while(selectedMovieId != 0 && !movieLocate){
