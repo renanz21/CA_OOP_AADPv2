@@ -13,6 +13,9 @@ import java.util.List;
 /**
  *
  * @author Amanda Lima
+ * 
+ * @author Carolina Franco do Prado (from line 33 to 69)
+ * Student number:2020354
  */
 public class CSVFileProcessor {
     public void CSVFileProcessor() throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException {
@@ -43,6 +46,7 @@ public class CSVFileProcessor {
         
         boolean locate = false;
         for (MoviesRecord movie : movies) {
+         //If movie Id is found will output the movie and the price   
             if(Id == movie.id){
                 locate = true;
                 System.out.println("Movie: " + movie.title + "Price: " + movie.price);
