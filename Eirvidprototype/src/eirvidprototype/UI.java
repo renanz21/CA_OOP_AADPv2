@@ -61,7 +61,9 @@ public class UI {
                                  System.out.println("----------------------RECEIPT--------------------");
                                  movieLocate = csv.FindMovieById(selectedMovieId);
                                  System.out.println("User: " + name);
-                                 System.out.println("-------------------------------------------------");                            
+                                 System.out.println("-------------------------------------------------");
+
+                              
                              }
                                                          
                         }else{
