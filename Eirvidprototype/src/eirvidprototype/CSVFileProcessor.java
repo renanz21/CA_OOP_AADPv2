@@ -51,16 +51,9 @@ public class CSVFileProcessor {
                 locate = true;
                 System.out.println("Movie: " + movie.title + "Price: " + movie.price);
                 
-                ReturnClass search = new ReturnClass();
-                boolean isFound = search.returnMovieIsFound(movie.id);
+                //Inserts the record of movie picked in the database
+                InsertClass.insertMovie(movie.title, movie.price);
                 
-                if (isFound == false){
-                    InsertClass.updateMovie(movie.id, movie.title, movie.price, 1);
-                } else {
-                    InsertClass.updateMovie(movie.id);
-                }
-                
-                break;
             }
         }        
         if(!locate){

@@ -19,15 +19,12 @@ public class InsertClass {
             SQLConnection.connectSQL(newQuery);
     }
     
-    //Polymorphy for updateMovie that eaither add the movie in the database in case its first time being picked, and if already exists adds the counter of times picked
+    //Query to add a record of all movies picked from any user
     
-    public static void updateMovie(int movieID, String title, double price, int counter){
-            String newQuery = "INSERT INTO `ca_oop_aadp`.`rent` (`movieID`, `title`, `price`, `counter`) VALUES ('" + movieID + "', '" + title + "', '" + price + "', '" + counter + "');";
-            SQLConnection.connectSQL(newQuery);
-    }
-    
-    public static void updateMovie(int movieID){
-            String newQuery = "UPDATE `ca_oop_aadp`.`rent` SET `counter` = `counter`+1 WHERE (`movieID` = '" + movieID +"');";
+     public static void insertMovie(String title, double price){
+        
+            String newQuery = "INSERT INTO `ca_oop_aadp`.`rent` (`movieTitle`, `price`, `rentTime`, `rentExpire`, `rentPlusFive`) VALUES ('" + title + "', '" + price + "', sysdate(), sysdate() + interval '1' minute, sysdate() + interval '5' minute);";
+            //String newQuery = "INSERT INTO `ca_oop_aadp`.`rent` (`movieID`, `title`, `price`, `counter`) VALUES ('" + movieID + "', '" + title + "', '" + price + "', '" + counter + "');";
             SQLConnection.connectSQL(newQuery);
     }
 }

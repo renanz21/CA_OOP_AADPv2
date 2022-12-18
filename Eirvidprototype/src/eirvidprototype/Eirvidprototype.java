@@ -24,11 +24,11 @@ public class Eirvidprototype {
    
        
 
-       UI user2 = new UI();
-       user2.UI();
+//       UI user2 = new UI();
+//       user2.UI();
        
       
-       
+         registrationData.menu();
       
             }
            

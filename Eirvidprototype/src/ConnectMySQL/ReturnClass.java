@@ -21,16 +21,17 @@ public class ReturnClass {
             
     }
     
-    //Query to filter and order top 5 movies rented based on the counter field
+    //Query to filter and order top 5 movies in the last 5 minutes
     
      public static void listTopRented(){
         
-            String newQuery = "SELECT * FROM rent ORDER BY counter DESC LIMIT 5;";
+            String newQuery = "SELECT COUNT(movieTitle), movieTitle FROM rent WHERE rentPlusFive > sysdate() GROUP BY movieTitle ORDER BY COUNT(movieTitle) DESC;";
             SQLConnection.connectSQL3(newQuery);
             
     }
     
-    //Query to search if movie already exists in the database
+    //Comment 1 - Query to search if movie already exists in the database
+    //Comment 2 - Approach changed, finding movies not necessary, record of every movie is stored in database
      
     public boolean returnMovieIsFound(int movieID){
         
@@ -39,6 +40,13 @@ public class ReturnClass {
             boolean result = obj.connectSQL2(newQuery);
             return result;
             
+    }
+    
+     public static void rentExpire(int recordID){
+         
+        String newQuery = "SELECT recordID, movieTitle, rentExpire FROM rent WHERE (`recordID` = '" + recordID + "');";
+        SQLConnection.connectSQL4(newQuery);
+        
     }
     
     public static void searchByEmail(String email){
