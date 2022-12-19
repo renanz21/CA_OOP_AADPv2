@@ -18,6 +18,7 @@ public class saveData {
      }
      
      public static void deleteData(){
+         // MYSQL QUERY THAT DELETE THE CODE FROM THE LIST
             System.out.println("Do you which to remove a movie from your history, type 1 for yes or 2 for no");
            Scanner scan = new Scanner(System.in);
             int YN = scan.nextInt();
@@ -40,6 +41,7 @@ public class saveData {
     }*/
     
      public static void mostRented(String [] args){
+         // TH QUERRY THAT GET THE MOST RENTED MOVIE IN THE DATABASE
          String mostRented ="SELECT TOP 5 FROM `rent` WHERE MAX(countDown) ORDER BY movieID;";
          SQLConnection.connectSQL(mostRented);
          System.out.println(mostRented);   

@@ -15,19 +15,21 @@ public class ColumnsMap {
     
     */
     public MoviesRecord Map(String[] columns) {
-        String originalLanguage = columns[0];
-        String originalTitle = columns[1];
-        String overview = columns[2];
-        double popularity = Double.parseDouble(columns[3]);
+        int id = Integer.parseInt(columns[0]);
+        String originalLanguage = columns[1];
+        String originalTitle = columns[2];
+        String overview = columns[3];
+        double popularity = Double.parseDouble(columns[4]);
         //find how to get date
-        int runtime = Integer.parseInt(columns[5]);
-        String tagline = columns[6];
-        String title = columns[7];
-        double voteAverage = Double.parseDouble(columns[8]);
-        int voteCount = Integer.parseInt(columns[9]);
-        double price = Double.parseDouble(columns[10]);
+        int runtime = Integer.parseInt(columns[6]);
+        String tagline = columns[7];
+        String title = columns[8];
+        double voteAverage = Double.parseDouble(columns[9]);
+        int voteCount = Integer.parseInt(columns[10]);
+        double price = Double.parseDouble(columns[11]);
         
         return new MoviesRecord(
+                id,
                 originalLanguage,
                 originalTitle,
                 overview,
