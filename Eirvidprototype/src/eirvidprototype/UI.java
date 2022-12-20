@@ -18,7 +18,7 @@ public class UI {
     
      public void UI() throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException{ 
    
-         OUTER:
+         
          do {
              Scanner userInput = new Scanner (System.in);
              System.out.println("Do you want to Register on EirVid?");
@@ -27,7 +27,7 @@ public class UI {
              String opreg = userInput.nextLine();
             
 //REGISTER USER
-
+            
                  switch (opreg) {
     //If the user type 1 the registration will be done 
                      case "1":
@@ -62,6 +62,7 @@ public class UI {
                                  movieLocate = csv.FindMovieById(selectedMovieId);
                                  System.out.println("User: " + name);
                                  System.out.println("-------------------------------------------------");
+   
 
                               
                              }
@@ -73,13 +74,13 @@ public class UI {
                          }           
                      case "2":
                          System.out.println("See you soon!");
-                         break OUTER;
+                         break;
                          
                      default:
                          System.out.println("Please type only numerical data between 1 to 2.");
                          break;
-                 }
-             }while (false);
+                               }
+        }while (false);
      }
 }
 
