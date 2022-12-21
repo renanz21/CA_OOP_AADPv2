@@ -12,7 +12,7 @@ package eirvidprototype;
  */
 public class ColumnsMap {
     /* This class was created based on Algorithms, architecture design patterns classes
-    
+    this class creates an Array and split all the columns in the cvs file into categories and parses to the class MoviesRecord
     */
     public MoviesRecord Map(String[] columns) {
         int id = Integer.parseInt(columns[0]);

@@ -26,10 +26,9 @@ public class DataParser {
         lines.forEach(line -> {
             // Splitting
             String[] columns = dataSplit.Seperate(line);
-            
             // Validating
             if (dataValidator.ValidateData(columns)) {
-                // Mapping
+            // Mapping
             movies.add(columnsMap.Map(columns));
             //}
         };   

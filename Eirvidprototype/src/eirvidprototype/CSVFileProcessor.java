@@ -13,11 +13,15 @@ import java.util.List;
 /**
  *
  * @author Amanda Lima
+ * Student number:2020304
  * 
  * @author Carolina Franco do Prado (from line 33 to 69)
  * Student number:2020354
  */
 public class CSVFileProcessor {
+    /* This class was created based on Algorithms, architecture design patterns classes
+    */
+    //this method is responsable for putting everything together in the process of reading the csv file 
     public void CSVFileProcessor() throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException {
 
         String inputFile = "Movie_Metadata_Edited_2_Small.csv";
@@ -67,12 +71,12 @@ public class CSVFileProcessor {
 
 
 class MoviesRecord { 
+    //this class receive and classify all the data
         int id;
         String originalLanguage;
         String originalTitle;
         String overview;
         double popularity;
-        //find how to get date
         int runtime;
         String tagline;
         String title;

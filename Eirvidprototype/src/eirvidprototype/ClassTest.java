@@ -10,8 +10,11 @@ import java.util.List;
 /**
  *
  * @author Amanda Lima
+ *  Student number:2020304
  */
 public class ClassTest {
+    /* This class was created based on Algorithms, architecture design patterns classes
+    */
     
     //this class receive the list of movies as a parameter, I used so you guys could see it how to get information from the CVSFileProcessor, pls go to the CVSFileProcessor to see the final step 
     public void outputData(List<MoviesRecord> movies) throws ClassNotFoundException, InstantiationException, IllegalAccessException {

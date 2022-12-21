@@ -14,7 +14,7 @@ public class DataValidator {
     This class is responsable for checking if all the columns in the cvs file is in the correct format and output a boolean variable.
     */
      public boolean ValidateData(String[] columns) {
-//      check if all the fields are incluided in the file
+//      check if all the columns are incluided in the file
 //System.out.println(columns.length);
         if (columns.length != 12) {
             System.out.println("Warning: Incorrect file format");
