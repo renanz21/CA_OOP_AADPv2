@@ -21,16 +21,18 @@ public class Eirvidprototype {
     public static void main(String[] args) throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException {
         
        
-   
-       
-
-      //UI user2 = new UI();
-      //user2.UI();
-       
       
-         registrationData.menu();
+        registrationData.menu();
+         
+         //Printing top 5 picks from last 5 minutes
       
-            }
+         //ReturnClass.listTopRented();
+         
+         //Listing user information from database
+         
+         //ReturnClass.listUserInformation();
+         
+        }
            
     }
 

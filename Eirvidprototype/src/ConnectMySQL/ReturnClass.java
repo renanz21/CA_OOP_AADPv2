@@ -10,7 +10,7 @@ package ConnectMySQL;
  * @SN 2020295
  * 
  */
-public class ReturnClass {
+public class ReturnClass implements movieInterface {
     
     //Query to list user information from database
     
@@ -42,7 +42,19 @@ public class ReturnClass {
             
     }
     
-     public static void rentExpire(int recordID){
+    //Method to get record ID from database based on the time of the rent fro the receipt
+    
+    @Override
+    public String returnMovieID (){
+        SQLConnection obj = new SQLConnection();
+        String newQuery = "SELECT recordID, rentExpire FROM rent WHERE (`rentTime` = sysdate());";
+        String result = obj.connectSQL5(newQuery);
+        return result;
+    }
+    
+    //Method to return the expiration date from the movie
+    
+     public static void rentExpire(String recordID){
          
         String newQuery = "SELECT recordID, movieTitle, rentExpire FROM rent WHERE (`recordID` = '" + recordID + "');";
         SQLConnection.connectSQL4(newQuery);

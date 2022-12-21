@@ -46,7 +46,7 @@ public class SQLConnection {
 			// Loop through the result set
                         
 			while(rs.next()) {
-				System.out.println( rs.getString("movieID") + "\t" + rs.getString("name") + "\t" + rs.getString("email"));
+				System.out.println( rs.getString("customerID") + "\t" + rs.getString("name") + "\t" + rs.getString("email"));
                            }
 
 			// Close the result set
@@ -264,6 +264,8 @@ public class SQLConnection {
 		}
     }
     
+    //Connection to print information in the recepit
+    
     static void connectSQL4(String query){
         
         try{
@@ -290,7 +292,7 @@ public class SQLConnection {
 			// Loop through the result set
                         
 			while(rs.next()) {
-				System.out.println( rs.getString("recordID") + "\t" + rs.getString("movieTitle") + "\t" + rs.getString("rentExpire"));
+				System.out.println( "ID Record: " + rs.getString("recordID") + "\t" + " Title: " + rs.getString("movieTitle") + "\t" + " Expire date: " + rs.getString("rentExpire"));
                            }
 
 			// Close the result set
@@ -345,6 +347,80 @@ public class SQLConnection {
                         
                         //System.out.println( e ) ;
 		}
+    }
+    
+    //Connection to filter record ID and return the ID number
+    
+    public String connectSQL5(String query){
+        
+        String result = "test";
+        try{
+			// Load the database driver
+                        Class.forName("com.mysql.cj.jdbc.Driver");
+			
+			String dbServer = "jdbc:mysql://localhost/ca_oop_aadp";
+			String user = "root";
+			String password = "root";
+
+			// Get a connection to the database
+			Connection conn = DriverManager.getConnection(dbServer, user, password) ;
+
+			// Get a statement from the connection
+			Statement stmt = conn.createStatement() ;
+                        
+                        //First try used to return information in Result sets
+                        
+                        try {
+                            
+			// Execute the query
+			ResultSet rs = stmt.executeQuery(query) ;
+			
+			// Loop through the result set
+                        
+                        while(rs.next()) {
+                            result = rs.getString("recordID");
+                        }
+                        
+
+			// Close the result set
+			rs.close() ;                      
+			stmt.close() ;
+			conn.close() ;
+                        }
+                        catch( SQLException se ){
+                        
+                        /*
+                        * SQL Excpetion code in case needed for troubleshooting
+                        */ 
+                            
+			System.out.println( "SQL Exception:" ) ;
+
+			// Loop through the SQL Exceptions
+			while( se != null ){
+				System.out.println( "State  : " + se.getSQLState()  ) ;
+				System.out.println( "Message: " + se.getMessage()   ) ;
+				System.out.println( "Error  : " + se.getErrorCode() ) ;
+
+				se = se.getNextException() ;
+                            }
+                        }
+                        
+                        
+                        // Second try in case no result data sets are recognized to execute a simple query line
+                        
+                                        
+		}
+		
+		catch( Exception e ){
+                    
+                            /*
+                            * SQL Excpetion code in case needed for troubleshooting
+                            */ 
+                        
+                        System.out.println( e ) ;
+		}
+        
+        return result;
     }
     
 }

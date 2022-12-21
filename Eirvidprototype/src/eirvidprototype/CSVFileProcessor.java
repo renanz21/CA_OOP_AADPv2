@@ -53,7 +53,7 @@ public class CSVFileProcessor {
          //If movie Id is found will output the movie and the price   
             if(Id == movie.id){
                 locate = true;
-                System.out.println("Movie: " + movie.title + "Price: " + movie.price);
+                System.out.println("Movie: " + movie.title + " Price: " + movie.price);
                 
                 //Inserts the record of movie picked in the database
                 InsertClass.insertMovie(movie.title, movie.price);
